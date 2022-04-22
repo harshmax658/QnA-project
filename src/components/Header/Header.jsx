@@ -1,15 +1,19 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./header.scss";
 
 const Header = () => {
+  const nav = useNavigate();
   return (
     <div className="header">
-      <div className="logo">Logo</div>
+      <div onClick={() => nav("")} className="logo">
+        Logo
+      </div>
       <div className="menu">
         <ul>
-          <li>Home</li>
-          <li>question</li>
-          <li>login/signup</li>
+          <li onClick={() => nav("")}>Home</li>
+          <li onClick={() => nav("/questions")}>question</li>
+          <li onClick={() => nav("/login")}>login/signup</li>
         </ul>
       </div>
     </div>
